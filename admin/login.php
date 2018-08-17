@@ -28,6 +28,13 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
               $sql = "SELECT * FROM user WHERE username = '$user' AND password = '$pass' ";
               $result = mysqli_query($conn,$sql);
               $row = mysqli_fetch_assoc($result);
+
+              // check untuk mhs
+              $pass2 = mysqli_real_escape_string($conn,$_POST['pass']);
+              $result2 = mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nim = '$user' AND nim = '$pass2' ");
+              $row2 = mysqli_fetch_assoc($result2);
+
+              // check untuk user admin
               if(mysqli_num_rows($result) > 0){
                 $_SESSION['username'] = $user;
                 $_SESSION['foto'] = $row['foto'];
@@ -37,6 +44,15 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
                 $_SESSION['pesan'] = 'Selamat Datang '.$row['nama'].' !';
                 // Redirect user to index.php
                 header("Location: index.php");
+
+                // check untuk mhs
+              }elseif(mysqli_num_rows($result2) > 0){
+                $_SESSION['nim'] = $row2['nim'];
+                $_SESSION['nama'] = $row2['nama'];
+                $_SESSION['pesan'] = 'Selamat Datang '.$row2['nama'].' !';
+                // redirect ke page mhs
+                header("Location: mhs.php");
+                
               }else{
               echo '
               <div class="w3-padding w3-red">Username atau Password Salah</div>

@@ -51,7 +51,7 @@ include "../include/database.php";
 										<option value="80">B</option>
 										<option value="70">C</option>
 										<option value="60">D</option>
-										<option value="50">E</option>
+										<option value="40">E</option>
 									</select>
 								</div>
 								<div class="w3-half w3-padding">
@@ -62,7 +62,7 @@ include "../include/database.php";
 										<option value="80">B</option>
 										<option value="70">C</option>
 										<option value="60">D</option>
-										<option value="50">E</option>
+										<option value="40">E</option>
 									</select>
 								</div>
 								<div class="w3-half w3-padding">
@@ -73,7 +73,7 @@ include "../include/database.php";
 										<option value="80">B</option>
 										<option value="70">C</option>
 										<option value="60">D</option>
-										<option value="50">E</option>
+										<option value="40">E</option>
 									</select>
 								</div>
 								<div class="w3-half w3-padding">
@@ -84,18 +84,18 @@ include "../include/database.php";
 										<option value="80">B</option>
 										<option value="70">C</option>
 										<option value="60">D</option>
-										<option value="50">E</option>
+										<option value="40">E</option>
 									</select>
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Penyesuain Diri</b></label>
 									<select class="w3-select" name="penyesuaian" required>
 										<option></option>
-										<option value="100">A</option>
+										<option value="90">A</option>
 										<option value="80">B</option>
 										<option value="70">C</option>
 										<option value="60">D</option>
-										<option value="50">E</option>
+										<option value="40">E</option>
 									</select>
 								</div>
 							</div>

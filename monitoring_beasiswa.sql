@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2018 at 01:23 PM
+-- Generation Time: Aug 17, 2018 at 03:24 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -46,7 +46,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`mahasiswa_id`, `nim`, `nama`, `jenis_kelamin`, `program_studi`, `angkatan`, `nilai_akademik`, `nilai_menwa`, `nilai_vtb`, `tahun_ajaran`) VALUES
-(2, '1423123', 'ikhsan', 'L', 'PGSD', '2014', '', '76', '70', '2018');
+(2, '1423123', 'ikhsan', 'L', 'PGSD', '2014', '3.1', '76', '40', '2018');
 
 -- --------------------------------------------------------
 
