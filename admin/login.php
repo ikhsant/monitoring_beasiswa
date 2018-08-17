@@ -32,6 +32,7 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
                 $_SESSION['username'] = $user;
                 $_SESSION['foto'] = $row['foto'];
                 $_SESSION['nama'] = $row['nama'];
+                $_SESSION['akses_level'] = $row['akses_level'];
                 $_SESSION['tahun_ajaran'] = date('Y');
                 $_SESSION['pesan'] = 'Selamat Datang '.$row['nama'].' !';
                 // Redirect user to index.php

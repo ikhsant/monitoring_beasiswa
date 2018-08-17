@@ -1,31 +1,50 @@
 <nav class="w3-sidebar w3-bar-block w3-card w3-collapse w3-animate-left" style="z-index:3;width: 270px" id="mySidebar">
 	<div class="w3-padding w3-center">
 		<img src="../uploads/logo/<?php echo $setting['logo']; ?>" width="50%">
+		<br>
+		<?php echo $_SESSION['nama']; ?>
+		<br>
+		<span class="w3-tag w3-teal"><?php echo $_SESSION['akses_level'] ?></span>
 	</div>
 
 	<!-- Menu dashboard -->
 	<a href="index.php" class="w3-bar-item w3-button <?php if($page_name == 'index.php'){echo 'w3-theme';} ?>"><i class="fa fa-star w3-margin-right"></i>DASHBOARD</a>
 
+	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'kemahasiswaan'){ ?>
 	<!-- Menu mahasiswa -->
 	<a href="mahasiswa.php" class="w3-bar-item w3-button <?php if($page_name == 'mahasiswa.php'){echo 'w3-theme';} ?>"><i class="fa fa-users w3-margin-right"></i>MAHASISWA</a>
+	<?php } ?>
 
+	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'akademik'){ ?>
 	<!-- Menu Nilai akademik -->
 	<a href="nilai_akademik.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_akademik.php'){echo 'w3-theme';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI AKADEMIK</a>
+	<?php } ?>
 
+	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_vtb' OR $_SESSION['akses_level'] == 'pembimbing_menwa'){ ?>
      <!-- Menu Nilai organisasi -->
-	<a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_vtb.php' | $page_name == 'nilai_organisasi_menwa.php'){echo 'w3-grey';} ?>"><i class="fa fa-gear w3-margin-right"></i>NILAI ORGANISASI<i class="w3-margin-left fa fa-caret-down"></i></a>
+	<a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_vtb.php' | $page_name == 'nilai_organisasi_menwa.php'){echo 'w3-grey';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI ORGANISASI<i class="w3-margin-left fa fa-caret-down"></i></a>
 
 	<div id="Demo1" class="w3-hide <?php if($page_name == 'nilai_organisasi_vtb.php' | $page_name == 'nilai_organisasi_menwa.php'){echo 'w3-show';} ?>">
+
+		<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_vtb'){ ?>
 		<a href="nilai_organisasi_vtb.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_vtb.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>VTB</a>
+		<?php } ?>
+		<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_menwa'){ ?>
 		<a href="nilai_organisasi_menwa.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_menwa.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>MENWA</a>
+		<?php } ?>
 	</div>
+	<?php } ?>
 
+
+	<?php if($_SESSION['akses_level'] == 'admin'){ ?>
 	<!-- Menu Setting -->
-	<a id="myBtn" onclick="myFunc('Demo4')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'setting.php' | $page_name == 'setting_backup.php'){echo 'w3-grey';} ?>"><i class="fa fa-gear w3-margin-right"></i>SETTING<i class="w3-margin-left fa fa-caret-down"></i></a>
+	<a id="myBtn" onclick="myFunc('Demo4')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'setting.php' | $page_name == 'user.php'){echo 'w3-grey';} ?>"><i class="fa fa-gear w3-margin-right"></i>SETTING<i class="w3-margin-left fa fa-caret-down"></i></a>
 
-	<div id="Demo4" class="w3-hide <?php if($page_name == 'setting.php' | $page_name == 'setting_backup.php'){echo 'w3-show';} ?>">
+	<div id="Demo4" class="w3-hide <?php if($page_name == 'setting.php' | $page_name == 'user.php'){echo 'w3-show';} ?>">
 		<a href="setting.php" class="w3-bar-item w3-button <?php if($page_name == 'setting.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>Aplication</a>
+		<a href="user.php" class="w3-bar-item w3-button <?php if($page_name == 'user.php'){echo 'w3-theme';} ?>"><i class="fa fa-user w3-margin-right w3-margin-left"></i>User</a>
 	</div>
+	<?php } ?>
 
 	<!-- menu logout -->
 	<a href="logout.php" class="w3-bar-item w3-button w3-black" onclick="return confirm('Yakin Keluar?')"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>

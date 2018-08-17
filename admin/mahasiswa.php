@@ -16,7 +16,7 @@ $xcrud->table_name('Data Mahasiswa');
 $xcrud->limit(20);
 
 // columns
-$xcrud->columns('nilai_akademik,nilai_vtb,nilai_menwa, tahun_ajaran',true);
+$xcrud->columns('tahun_ajaran',true);
 
 // field
 $xcrud->fields('nilai_akademik,nilai_vtb,nilai_menwa,tahun_ajaran',true);
