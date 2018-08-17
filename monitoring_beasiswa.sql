@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2018 at 02:39 AM
+-- Generation Time: Aug 17, 2018 at 01:23 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -46,34 +46,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`mahasiswa_id`, `nim`, `nama`, `jenis_kelamin`, `program_studi`, `angkatan`, `nilai_akademik`, `nilai_menwa`, `nilai_vtb`, `tahun_ajaran`) VALUES
-(2, '1423123', 'ikhsan', 'L', 'PGSD', '2014', '80', '', '', '2018');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nilai_akademik`
---
-
-CREATE TABLE `nilai_akademik` (
-  `nilai_akademik_id` int(11) NOT NULL,
-  `mahasiswa_id` int(11) NOT NULL,
-  `tahun_ajaran` int(11) NOT NULL,
-  `nilai` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nilai_organisasi`
---
-
-CREATE TABLE `nilai_organisasi` (
-  `nilai_organisasi_id` int(11) NOT NULL,
-  `mahasiswa_id` int(11) NOT NULL,
-  `organisasi_id` int(11) NOT NULL,
-  `nilai` varchar(22) NOT NULL,
-  `tahun_ajaran` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(2, '1423123', 'ikhsan', 'L', 'PGSD', '2014', '', '76', '70', '2018');
 
 -- --------------------------------------------------------
 
@@ -132,8 +105,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `telp`, `username`, `password`, `akses_level`, `foto`, `last_login`) VALUES
-(7, 'Ikhsan Thohir', 'ikhsan.thohir@gmail.com', '081615399070', 'ikhsan', '67a7872c5aeb341d482f955cd8ff9b951a26e74e', 'admin', 'muhammad_ikhsan_thohir_3412.jpg', '2018-06-21 01:43:35'),
-(40, 'Eizan', 'eizan@gmail.com', '', 'eizan', '67a7872c5aeb341d482f955cd8ff9b951a26e74e', 'member', 'eizan_1243.png', '2018-06-16 05:39:36');
+(7, 'Ikhsan Thohir', 'ikhsan.thohir@gmail.com', '081615399070', 'ikhsan', '67a7872c5aeb341d482f955cd8ff9b951a26e74e', 'admin', '6mxjm9zocykg44g.jpg', '2018-06-21 01:43:35'),
+(41, 'Mutiara Islam Hasanah', '', '', 'mutiara', '3678276956b962786b863defa84bbe85519ea5ed', 'kemahasiswaan', '8x6vf01mg1s0gwg.png', '2018-08-17 10:53:13'),
+(42, 'admin', 'admin@admin.com', '08512535464', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', '62krgygah44kk0o.png', '2018-08-17 11:15:15'),
+(43, 'Muslih', '', '', 'kemahasiswaan', '06ae73a1d20112a48492f6b9eae8b5b9ed9cdb27', 'kemahasiswaan', '2w9ut328wce8o4k.png', '2018-08-17 11:17:22'),
+(44, 'Iyus', '', '', 'akademik', 'f2a53d8dadeaa7643eb0ae91346e72af3317ac67', 'akademik', '74wh39u6vfs48o8.png', '2018-08-17 11:17:22'),
+(45, 'Pembina Menwa', '', '', 'menwa', 'e0c5b991560f0db5380eabf0ae40c164b2d98be3', 'pembimbing_menwa', '3ycb1ubr6k8wgo.png', '2018-08-17 11:17:22'),
+(46, 'Pembina VTB', '', '', 'vtb', 'ba847692ce9d4620349012dde15e75442e65e3c9', 'pembimbing_vtb', '416j51u0aog0wck.png', '2018-08-17 11:17:22');
 
 --
 -- Indexes for dumped tables
@@ -144,18 +122,6 @@ INSERT INTO `user` (`id`, `nama`, `email`, `telp`, `username`, `password`, `akse
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`mahasiswa_id`);
-
---
--- Indexes for table `nilai_akademik`
---
-ALTER TABLE `nilai_akademik`
-  ADD PRIMARY KEY (`nilai_akademik_id`);
-
---
--- Indexes for table `nilai_organisasi`
---
-ALTER TABLE `nilai_organisasi`
-  ADD PRIMARY KEY (`nilai_organisasi_id`);
 
 --
 -- Indexes for table `organisasi`
@@ -186,18 +152,6 @@ ALTER TABLE `mahasiswa`
   MODIFY `mahasiswa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `nilai_akademik`
---
-ALTER TABLE `nilai_akademik`
-  MODIFY `nilai_akademik_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `nilai_organisasi`
---
-ALTER TABLE `nilai_organisasi`
-  MODIFY `nilai_organisasi_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `organisasi`
 --
 ALTER TABLE `organisasi`
@@ -207,7 +161,7 @@ ALTER TABLE `organisasi`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
