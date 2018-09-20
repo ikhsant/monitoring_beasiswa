@@ -45,58 +45,23 @@ include "../include/database.php";
 							<div class="w3-container">
 								<div class="w3-half w3-padding">
 									<label><b>Inisiatif</b></label>
-									<select class="w3-select" name="inisiatif" required>
-										<option></option>
-										<option value="100">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
+									<input type="number" class="w3-select" name="inisiatif" required>
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Disiplin</b></label>
-									<select class="w3-select" name="disiplin" required>
-										<option></option>
-										<option value="100">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
+									<input type="number" class="w3-select" name="disiplin" required>
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Tanggung Jawab</b></label>
-									<select class="w3-select" name="tanggung_jawab" required>
-										<option></option>
-										<option value="100">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
+									<input type="number" class="w3-select" name="tanggung_jawab" required>
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Kerja Sama</b></label>
-									<select class="w3-select" name="kerja_sama" required>
-										<option></option>
-										<option value="100">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
+									<input type="number" class="w3-select" name="kerja_sama" required>
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Penyesuain Diri</b></label>
-									<select class="w3-select" name="penyesuaian" required>
-										<option></option>
-										<option value="90">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
+									<input type="number" class="w3-select" name="penyesuaian" required>
 								</div>
 							</div>
 							<footer class="w3-padding w3-light-grey">
@@ -122,9 +87,21 @@ include "../include/database.php";
 
 	// menjumlahkan nilai
 		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
+	// menentukan nilai huruf
+		if ($nilai >= 85) {
+			$nilai_huruf = 'A';
+		}elseif ($nilai >= 70 ) {
+			$nilai_huruf = 'B';
+		}elseif ($nilai >= 65) {
+			$nilai_huruf = 'C';
+		}elseif ($nilai >= 50) {
+			$nilai_huruf = 'D';
+		}else{
+			$nilai_huruf = 'E';
+		}
 
 	// memasukan ke db
-		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
+		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai_huruf' WHERE mahasiswa_id = '$id' ");
 
 	// redicet
 		echo '<meta http-equiv="refresh" content="0"; URL="stok.php" />';
