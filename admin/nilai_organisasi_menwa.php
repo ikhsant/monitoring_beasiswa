@@ -43,7 +43,7 @@ include "../include/database.php";
 						</header>
 						<form method="post">
 							<div class="w3-container">
-								<!-- <div class="w3-half w3-padding">
+								<div class="w3-half w3-padding">
 									<label><b>Inisiatif</b></label>
 									<input type="number" class="w3-select" name="inisiatif" required>
 								</div>
@@ -70,6 +70,7 @@ include "../include/database.php";
 										<option value="60">D</option>
 										<option value="40">E</option>
 									</select>
+<<<<<<< HEAD
 								</div> -->
 								<div class="w3-padding">
 									<label><b>NILAI</b></label>
@@ -77,6 +78,8 @@ include "../include/database.php";
 =======
 									<input type="number" class="w3-select" name="penyesuaian" required>
 >>>>>>> 8d1d3000fa1a15dd80f936e00015c657a1ba4c8e
+=======
+>>>>>>> parent of fd5730c... up1
 								</div>
 							</div>
 							<footer class="w3-padding w3-light-grey">
@@ -93,20 +96,22 @@ include "../include/database.php";
 	<?php  
 	if (isset($_POST['simpan'])) {
 	// menyimpan nilai
-		// $inisiatif = $_POST['inisiatif'];
-		// $disiplin = $_POST['disiplin'];
-		// $tanggung_jawab = $_POST['tanggung_jawab'];
-		// $kerja_sama = $_POST['kerja_sama'];
-		// $penyesuaian = $_POST['penyesuaian'];
+		$inisiatif = $_POST['inisiatif'];
+		$disiplin = $_POST['disiplin'];
+		$tanggung_jawab = $_POST['tanggung_jawab'];
+		$kerja_sama = $_POST['kerja_sama'];
+		$penyesuaian = $_POST['penyesuaian'];
 		$id = $_POST['id'];
-		$nilai = $_POST['nilai'];
 
 	// menjumlahkan nilai
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// $nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
+=======
+		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
+>>>>>>> parent of fd5730c... up1
 
 	// memasukan ke db
-		// mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
 		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
 =======
 		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
