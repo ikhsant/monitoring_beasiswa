@@ -43,7 +43,7 @@ include "../include/database.php";
 						</header>
 						<form method="post">
 							<div class="w3-container">
-								<div class="w3-half w3-padding">
+								<!-- <div class="w3-half w3-padding">
 									<label><b>Inisiatif</b></label>
 									<select class="w3-select" name="inisiatif" required>
 										<option></option>
@@ -97,6 +97,10 @@ include "../include/database.php";
 										<option value="60">D</option>
 										<option value="40">E</option>
 									</select>
+								</div> -->
+								<div class="w3-padding">
+									<label><b>NILAI</b></label>
+									<input type="number" name="nilai" class="w3-input">
 								</div>
 							</div>
 							<footer class="w3-padding w3-light-grey">
@@ -113,17 +117,19 @@ include "../include/database.php";
 	<?php  
 	if (isset($_POST['simpan'])) {
 	// menyimpan nilai
-		$inisiatif = $_POST['inisiatif'];
-		$disiplin = $_POST['disiplin'];
-		$tanggung_jawab = $_POST['tanggung_jawab'];
-		$kerja_sama = $_POST['kerja_sama'];
-		$penyesuaian = $_POST['penyesuaian'];
+		// $inisiatif = $_POST['inisiatif'];
+		// $disiplin = $_POST['disiplin'];
+		// $tanggung_jawab = $_POST['tanggung_jawab'];
+		// $kerja_sama = $_POST['kerja_sama'];
+		// $penyesuaian = $_POST['penyesuaian'];
 		$id = $_POST['id'];
+		$nilai = $_POST['nilai'];
 
 	// menjumlahkan nilai
-		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
+		// $nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
 
 	// memasukan ke db
+		// mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
 		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
 
 	// redicet
