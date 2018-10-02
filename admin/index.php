@@ -43,7 +43,7 @@ include "../include/database.php";
 			<div class="w3-xxlarge">
 				<i class="fa fa-users"></i>
 				<?php 
-				$beasiswa_dipertahankan = mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nilai_akademik >= '3' AND nilai_vtb >= '73' AND nilai_menwa >= '73' ");
+				$beasiswa_dipertahankan = mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nilai_akademik >= '3' AND nilai_vtb >= '45' AND nilai_menwa >= '45' ");
 				echo mysqli_num_rows($beasiswa_dipertahankan); 
 				?>
 			</div>
@@ -56,7 +56,7 @@ include "../include/database.php";
 			<div class="w3-xxlarge">
 				<i class="fa fa-users"></i>
 				<?php 
-				$beasiswa_sp = mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nilai_akademik < '3' OR nilai_vtb < '44' OR nilai_menwa < '44' ");
+				$beasiswa_sp = mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nilai_akademik < '3' OR nilai_vtb < '45' OR nilai_menwa < '45' ");
 				echo mysqli_num_rows($beasiswa_sp); 
 				?>
 
