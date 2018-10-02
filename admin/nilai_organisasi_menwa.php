@@ -61,7 +61,6 @@ include "../include/database.php";
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Penyesuain Diri</b></label>
-<<<<<<< HEAD
 									<select class="w3-select" name="penyesuaian" required>
 										<option></option>
 										<option value="90">A</option>
@@ -70,16 +69,11 @@ include "../include/database.php";
 										<option value="60">D</option>
 										<option value="40">E</option>
 									</select>
-<<<<<<< HEAD
 								</div> -->
 								<div class="w3-padding">
 									<label><b>NILAI</b></label>
 									<input type="number" name="nilai" class="w3-input">
-=======
 									<input type="number" class="w3-select" name="penyesuaian" required>
->>>>>>> 8d1d3000fa1a15dd80f936e00015c657a1ba4c8e
-=======
->>>>>>> parent of fd5730c... up1
 								</div>
 							</div>
 							<footer class="w3-padding w3-light-grey">
@@ -104,16 +98,12 @@ include "../include/database.php";
 		$id = $_POST['id'];
 
 	// menjumlahkan nilai
-<<<<<<< HEAD
-<<<<<<< HEAD
 		// $nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
-=======
 		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
->>>>>>> parent of fd5730c... up1
+		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
 
 	// memasukan ke db
 		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
-=======
 		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
 	// menentukan nilai huruf
 		if ($nilai >= 85) {
@@ -130,7 +120,6 @@ include "../include/database.php";
 
 	// memasukan ke db
 		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai_huruf' WHERE mahasiswa_id = '$id' ");
->>>>>>> 8d1d3000fa1a15dd80f936e00015c657a1ba4c8e
 
 	// redicet
 		echo '<meta http-equiv="refresh" content="0"; URL="stok.php" />';
