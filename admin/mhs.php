@@ -5,6 +5,9 @@ include '../include/function.php';
 $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'));
 $nim = $_SESSION['nim'];
 $mhs = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nim ='$nim'"));
+$nilai_vtb = keNilaiHuruf($mhs['nilai_vtb']) ;
+$nilai_menwa = keNilaiHuruf($mhs['nilai_menwa']);
+$nilai_organisasi_total = $mhs['nilai_menwa'] + $mhs['nilai_vtb'];
 
 ?>
 <!DOCTYPE html>
@@ -57,11 +60,15 @@ $mhs = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM mahasiswa WHERE nim 
 				</tr>
 				<tr>
 					<th>Nilai VTB</th>
-					<td><?php echo keNilaiHuruf($mhs['nilai_vtb']) ?></td>
+					<td><?php echo $nilai_vtb ?></td>
 				</tr>
 				<tr>
 					<th>Nilai MENWA</th>
-					<td><?php echo keNilaiHuruf($mhs['nilai_menwa']) ?></td>
+					<td><?php echo $nilai_menwa ?></td>
+				</tr>
+				<tr>
+					<th>Nilai Organisasi Total</th>
+					<td><?php echo $nilai_organisasi_total ?></td>
 				</tr>
 				<tr>
 					<th>STATUS</th>
