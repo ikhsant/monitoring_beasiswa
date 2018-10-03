@@ -61,18 +61,6 @@ include "../include/database.php";
 								</div>
 								<div class="w3-half w3-padding">
 									<label><b>Penyesuain Diri</b></label>
-									<select class="w3-select" name="penyesuaian" required>
-										<option></option>
-										<option value="90">A</option>
-										<option value="80">B</option>
-										<option value="70">C</option>
-										<option value="60">D</option>
-										<option value="40">E</option>
-									</select>
-								</div> -->
-								<div class="w3-padding">
-									<label><b>NILAI</b></label>
-									<input type="number" name="nilai" class="w3-input">
 									<input type="number" class="w3-select" name="penyesuaian" required>
 								</div>
 							</div>
@@ -98,12 +86,6 @@ include "../include/database.php";
 		$id = $_POST['id'];
 
 	// menjumlahkan nilai
-		// $nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
-		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
-		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
-
-	// memasukan ke db
-		mysqli_query($conn, "UPDATE mahasiswa SET nilai_menwa = '$nilai' WHERE mahasiswa_id = '$id' ");
 		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
 	// menentukan nilai huruf
 		if ($nilai >= 85) {
