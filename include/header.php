@@ -4,11 +4,6 @@ include '../include/database.php';
 include "../operator/xcrud.php";
 $xcrud = Xcrud::get_instance();
 
-// active menu
-$url = $_SERVER['REQUEST_URI'];
-$parts = parse_url($url);
-$page_name = basename($parts['path']);
-
 // query setting
 $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'));
 
@@ -39,6 +34,13 @@ if($theme_color == 'red'){
   <link rel="stylesheet" type="text/css" href="../assets/css/<?php echo $style ?>">
   <link rel="stylesheet" href="../assets/css/custom.css">
   <link rel="stylesheet" href="../assets/css/font-awesome.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+  html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+  }
+  </style>
+
 </head>
 <body>
 <?php include 'nav.php'; ?>

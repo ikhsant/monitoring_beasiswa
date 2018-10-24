@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="refresh" content="0;url=pages/index.html">
-<title>Marketing Universitas Nusa Putra</title>
+<title></title>
 <script language="javascript">
     window.location.href = "admin/login.php"
 </script>

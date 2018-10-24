@@ -1,8 +1,3 @@
-<?php 
-$page = 'setting';
-$title = 'Setting';
-include "../include/header.php";
-?>
 <div class="w3-container">
 <?php 
 // notif pesan
@@ -153,8 +148,3 @@ if(isset($_POST["submit"])) {
 		</footer>
 	</div>
 </div>
-
-</div>
-<?php 
-include "../include/footer.php";
-?>

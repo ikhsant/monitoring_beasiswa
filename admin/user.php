@@ -1,8 +1,3 @@
-<?php 
-$title = "DATA USER";
-include '../include/header.php';
-?>
-
 <div class="w3-container">
 <?php
 	$xcrud->table('user');
@@ -15,7 +10,3 @@ include '../include/header.php';
     echo $xcrud->render();
 	?>
 </div>
-
-<?php 
-include '../include/footer.php';
-?>

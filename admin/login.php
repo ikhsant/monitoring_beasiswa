@@ -43,7 +43,7 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
                 $_SESSION['tahun_ajaran'] = date('Y');
                 $_SESSION['pesan'] = 'Selamat Datang '.$row['nama'].' !';
                 // Redirect user to index.php
-                header("Location: index.php");
+                header("Location: index.php?page=dashboard");
 
                 // check untuk mhs
               }elseif(mysqli_num_rows($result2) > 0){
@@ -51,7 +51,7 @@ $setting = mysqli_fetch_assoc(mysqli_query($conn,'SELECT * FROM setting LIMIT 1'
                 $_SESSION['nama'] = $row2['nama'];
                 $_SESSION['pesan'] = 'Selamat Datang '.$row2['nama'].' !';
                 // redirect ke page mhs
-                header("Location: mhs.php");
+                header("Location: index.php?page=mhs");
                 
               }else{
               echo '

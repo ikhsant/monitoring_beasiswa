@@ -1,9 +1,3 @@
-<?php
-$title 	= 'Data Nilai Organisasi MENWA';
-include "../include/header.php";
-include "../include/database.php";
-?>
-
 <div class="w3-padding w3-green w3-large w3-margin">
 	<?php  
 	echo 'Tahun Ajaran: '.$_SESSION['tahun_ajaran'];
@@ -43,7 +37,7 @@ include "../include/database.php";
 						</header>
 						<form method="post">
 							<div class="w3-container">
-								<!-- <div class="w3-half w3-padding">
+								<div class="w3-half w3-padding">
 									<label><b>Inisiatif</b></label>
 									<input type="number" class="w3-select" name="inisiatif" required>
 								</div>
@@ -62,9 +56,9 @@ include "../include/database.php";
 								<div class="w3-half w3-padding">
 									<label><b>Penyesuain Diri</b></label>
 									<input type="number" class="w3-select" name="penyesuaian" required>
-								</div> -->
-								<label><b>NILAI</b></label>
-									<input type="number" class="w3-select" name="nilai" required>
+								</div>
+								<!-- <label><b>NILAI</b></label>
+									<input type="number" class="w3-select" name="nilai" required> -->
 							</div>
 							<footer class="w3-padding w3-light-grey">
 								<input type="hidden" name="id" value="<?php echo $id ?>">
@@ -80,16 +74,16 @@ include "../include/database.php";
 	<?php  
 	if (isset($_POST['simpan'])) {
 	// menyimpan nilai
-		// $inisiatif = $_POST['inisiatif'];
-		// $disiplin = $_POST['disiplin'];
-		// $tanggung_jawab = $_POST['tanggung_jawab'];
-		// $kerja_sama = $_POST['kerja_sama'];
-		// $penyesuaian = $_POST['penyesuaian'];
+		$inisiatif = $_POST['inisiatif'];
+		$disiplin = $_POST['disiplin'];
+		$tanggung_jawab = $_POST['tanggung_jawab'];
+		$kerja_sama = $_POST['kerja_sama'];
+		$penyesuaian = $_POST['penyesuaian'];
 		$id = $_POST['id'];
 
 	// menjumlahkan nilai
-		// $nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
-		$nilai = $_POST['nilai'];
+		$nilai = ($inisiatif + $disiplin + $tanggung_jawab + $kerja_sama + $penyesuaian) / 5;
+		// $nilai = $_POST['nilai'];
 	// menentukan nilai huruf
 		if ($nilai >= 85) {
 			$nilai_huruf = 'A';
@@ -111,8 +105,4 @@ include "../include/database.php";
 		echo '<meta http-equiv="refresh" content="0"; URL="stok.php" />';
 
 	}
-	?>
-
-	<?php  
-	include '../include/footer.php';
 	?>

@@ -1,9 +1,3 @@
-<?php
-$title 	= 'Data Nilai Organisasi VTB';
-include "../include/header.php";
-include "../include/database.php";
-?>
-
 <div class="w3-padding w3-green w3-large w3-margin">
 	<?php  
 	echo 'Tahun Ajaran: '.$_SESSION['tahun_ajaran'];
@@ -112,8 +106,4 @@ include "../include/database.php";
 		echo '<meta http-equiv="refresh" content="0"; URL="stok.php" />';
 
 	}
-	?>
-
-	<?php  
-	include '../include/footer.php';
 	?>

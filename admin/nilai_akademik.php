@@ -1,8 +1,3 @@
-<?php
-$title 	= 'Data Nilai Akademik';
-include "../include/header.php";
-include "../include/database.php";
-?>
 
 <div class="w3-padding w3-green w3-large w3-margin">
 	<?php  
@@ -44,7 +39,3 @@ $xcrud->pass_default('tahun_ajaran', $tahun_ajaran);
 echo $xcrud->render();
 ?>
 </div>
-
-<?php  
-include '../include/footer.php';
-?>

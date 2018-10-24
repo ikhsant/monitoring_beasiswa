@@ -7,30 +7,39 @@
 		<span class="w3-tag w3-teal"><?php echo $_SESSION['akses_level'] ?></span>
 	</div>
 
+	<?php 
+	if(isset($_GET['page'])){ 
+		$page = $_GET['page'];
+	}
+	?>
+	
 	<!-- Menu dashboard -->
-	<a href="index.php" class="w3-bar-item w3-button <?php if($page_name == 'index.php'){echo 'w3-theme';} ?>"><i class="fa fa-star w3-margin-right"></i>DASHBOARD</a>
+	<a href="index.php?page=dashboard" class="w3-bar-item w3-button <?php if($page == 'dashboard'){echo 'w3-theme';} ?>"><i class="fa fa-star w3-margin-right"></i>DASHBOARD</a>
 
 	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'kemahasiswaan'){ ?>
+
 	<!-- Menu mahasiswa -->
-	<a href="mahasiswa.php" class="w3-bar-item w3-button <?php if($page_name == 'mahasiswa.php'){echo 'w3-theme';} ?>"><i class="fa fa-users w3-margin-right"></i>MAHASISWA</a>
+	<a href="index.php?page=mahasiswa" class="w3-bar-item w3-button <?php if($page == 'mahasiswa'){echo 'w3-theme';} ?>"><i class="fa fa-users w3-margin-right"></i>MAHASISWA</a>
 	<?php } ?>
 
 	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'akademik'){ ?>
+
 	<!-- Menu Nilai akademik -->
-	<a href="nilai_akademik.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_akademik.php'){echo 'w3-theme';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI AKADEMIK</a>
+	<a href="index.php?page=nilai_akademik" class="w3-bar-item w3-button <?php if($page == 'nilai_akademik'){echo 'w3-theme';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI AKADEMIK</a>
 	<?php } ?>
 
 	<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_vtb' OR $_SESSION['akses_level'] == 'pembimbing_menwa'){ ?>
-     <!-- Menu Nilai organisasi -->
-	<a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_vtb.php' | $page_name == 'nilai_organisasi_menwa.php'){echo 'w3-grey';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI ORGANISASI<i class="w3-margin-left fa fa-caret-down"></i></a>
 
-	<div id="Demo1" class="w3-hide <?php if($page_name == 'nilai_organisasi_vtb.php' | $page_name == 'nilai_organisasi_menwa.php'){echo 'w3-show';} ?>">
+     <!-- Menu Nilai organisasi -->
+	<a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page == 'nilai_organisasi_vtb' | $page == 'nilai_organisasi_menwa'){echo 'w3-grey';} ?>"><i class="fa fa-book w3-margin-right"></i>NILAI ORGANISASI<i class="w3-margin-left fa fa-caret-down"></i></a>
+
+	<div id="Demo1" class="w3-hide <?php if($page == 'nilai_organisasi_vtb' | $page == 'nilai_organisasi_menwa'){echo 'w3-show';} ?>">
 
 		<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_vtb'){ ?>
-		<a href="nilai_organisasi_vtb.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_vtb.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>VTB</a>
+		<a href="index.php?page=nilai_organisasi_vtb" class="w3-bar-item w3-button <?php if($page == 'nilai_organisasi_vtb'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>VTB</a>
 		<?php } ?>
 		<?php if($_SESSION['akses_level'] == 'admin' OR $_SESSION['akses_level'] == 'pembimbing_menwa'){ ?>
-		<a href="nilai_organisasi_menwa.php" class="w3-bar-item w3-button <?php if($page_name == 'nilai_organisasi_menwa.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>MENWA</a>
+		<a href="index.php?page=nilai_organisasi_menwa" class="w3-bar-item w3-button <?php if($page == 'nilai_organisasi_menwa'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>MENWA</a>
 		<?php } ?>
 	</div>
 	<?php } ?>
@@ -38,16 +47,16 @@
 
 	<?php if($_SESSION['akses_level'] == 'admin'){ ?>
 	<!-- Menu Setting -->
-	<a id="myBtn" onclick="myFunc('Demo4')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page_name == 'setting.php' | $page_name == 'user.php'){echo 'w3-grey';} ?>"><i class="fa fa-gear w3-margin-right"></i>SETTING<i class="w3-margin-left fa fa-caret-down"></i></a>
+	<a id="myBtn" onclick="myFunc('Demo4')" href="javascript:void(0)" class="w3-bar-item w3-button <?php if($page == 'setting' | $page == 'user'){echo 'w3-grey';} ?>"><i class="fa fa-gear w3-margin-right"></i>SETTING<i class="w3-margin-left fa fa-caret-down"></i></a>
 
-	<div id="Demo4" class="w3-hide <?php if($page_name == 'setting.php' | $page_name == 'user.php'){echo 'w3-show';} ?>">
-		<a href="setting.php" class="w3-bar-item w3-button <?php if($page_name == 'setting.php'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>Aplication</a>
-		<a href="user.php" class="w3-bar-item w3-button <?php if($page_name == 'user.php'){echo 'w3-theme';} ?>"><i class="fa fa-user w3-margin-right w3-margin-left"></i>User</a>
+	<div id="Demo4" class="w3-hide <?php if($page == 'setting' | $page == 'user'){echo 'w3-show';} ?>">
+		<a href="index.php?page=setting" class="w3-bar-item w3-button <?php if($page == 'setting'){echo 'w3-theme';} ?>"><i class="fa fa-gear w3-margin-right w3-margin-left"></i>Aplication</a>
+		<a href="index.php?page=user" class="w3-bar-item w3-button <?php if($page == 'user'){echo 'w3-theme';} ?>"><i class="fa fa-user w3-margin-right w3-margin-left"></i>User</a>
 	</div>
 	<?php } ?>
 
 	<!-- menu logout -->
-	<a href="logout.php" class="w3-bar-item w3-button w3-black" onclick="return confirm('Yakin Keluar?')"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
+	<a href="index.php?page=logout" class="w3-bar-item w3-button w3-black" onclick="return confirm('Yakin Keluar?')"><i class="fa fa-sign-out w3-margin-right"></i>LOGOUT</a>
 
 </nav>
 
